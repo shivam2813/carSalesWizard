@@ -1,0 +1,76 @@
+/* 
+
+Developed by Shivam Arora
+
+on 28 Oct,2025
+*/
+
+.heroSection-wrapper {
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e293b;
+  color: white;
+  max-height: 500px;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center; /* center text for small screens */
+}
+@media (min-width: 768px) {
+  .heroSection-wrapper {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+.heroSection-dataWrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  grid-template-rows: 200px 100px 80px;
+  place-items: center;
+  text-align: center;
+  row-gap: 0.5rem;
+}
+.heroSection-mainHeadline h1 {
+  font-size: clamp(
+    2rem,
+    5vw,
+    4rem
+  ); /* responsive scaling: min 2rem, max 4rem */
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.heroSection-mainHeadline span {
+  color: #ff4d00;
+  font-size: clamp(
+    2rem,
+    5vw,
+    4rem
+  ); /* responsive scaling: min 2rem, max 4rem */
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.heroSection-belowHeadline h4 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* responsive: min 1rem, max 1.5rem */
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+.heroSection-contactButton {
+  background-color: #f97316;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.heroSection-contactButton:hover {
+  background-color: #ea580c;
+  transform: scale(1.05);
+}

@@ -1,0 +1,114 @@
+/* Section Wrapper */
+.insuranceComponent-wrapper {
+  background-color: #f8fafc;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .insuranceComponent-container {
+    padding: 6rem 1.5rem;
+  }
+}
+
+/* Container */
+.insuranceComponent-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  gap: 5px;
+}
+
+/* Title & Subtitle */
+.insuranceComponent-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.insuranceComponent-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  color: #4b5563; /* gray-600 */
+  margin-bottom: 3rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid */
+.insuranceComponent-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .insuranceComponent-wrapper {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .insuranceComponent-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Card */
+.insuranceComponent-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #1e293b; /* slate-800 */
+  transition: all 0.5s ease;
+}
+
+.insuranceComponent-card:hover {
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon */
+.insuranceComponent-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+/* Card Text */
+.insuranceComponent-cardTitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.insuranceComponent-cardText {
+  color: #4b5563;
+}
+
+/* CTA Button */
+.insuranceComponent-cta {
+  margin-top: 2rem;
+}
+
+.insuranceComponent-ctaButton {
+  background-color: #f97316 !important;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.insuranceComponent-ctaButton:hover {
+  background-color: #ea580c; /* orange-600 */
+}

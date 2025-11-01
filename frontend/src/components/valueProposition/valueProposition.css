@@ -1,0 +1,43 @@
+/* Wrapper with background and padding */
+.valuePropComponent-wrapper {
+  background-color: #f97316; /* Tailwind bg-orange-500 */
+  color: white;
+  padding: 3rem 1rem; /* py-12 */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Container for max-width and horizontal padding */
+.valuePropComponent-container {
+  max-width: 1280px; /* Tailwind max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1rem; /* px-4 */
+}
+
+@media (min-width: 640px) {
+  /* sm:px-6 */
+  .valuePropComponent-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg:px-8 */
+  .valuePropComponent-container {
+    padding: 0 2rem;
+  }
+}
+
+/* Title styling */
+.valuePropContainer-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle styling */
+.valuePropContainer-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 400; /* regular */
+  margin-top: 0.25rem;
+}
