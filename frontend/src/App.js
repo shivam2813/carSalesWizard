@@ -6,6 +6,7 @@ import InsuranceComponent from "./components/insuranceComponent/InsuranceCompone
 import Navbar from "./components/Navbar/Navbar";
 import ReviewsComponent from "./components/reviewsComponent/ReviewsComponent";
 import ValuePropComponent from "./components/valueProposition/ValueProposition";
+import FooterComponent from "./components/footerComponent/FooterComponent";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <InsuranceComponent />
       <ReviewsComponent />
       <ContactComponent />
+      <FooterComponent />
     </div>
   );
 }

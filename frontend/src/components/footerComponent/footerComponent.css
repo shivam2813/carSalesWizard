@@ -1,0 +1,57 @@
+/* FooterComponent.css */
+
+/* Wrapper with background color and padding */
+.footerComponent-wrapper {
+  background-color: #1e293b; /* slate-800 */
+  color: white;
+  padding: 2rem 0;
+}
+
+/* Container to center content and handle responsive layout */
+.footerComponent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1280px; /* similar to max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1rem; /* px-4 */
+}
+
+@media (min-width: 768px) {
+  .footerComponent-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Typography styling */
+.footerComponent-container p {
+  font-size: 0.875rem; /* text-sm */
+  margin: 0; /* reset default p margin */
+}
+
+/* Links container */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* spacing between links */
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    margin-top: 0;
+  }
+}
+
+/* Individual link styles */
+.footer-link {
+  color: #9ca3af; /* gray-400 */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #f97316; /* orange-500 */
+}

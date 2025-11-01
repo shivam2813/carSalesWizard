@@ -8,6 +8,9 @@ on 29 Oct,2025
 //lib
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+
 //component
 
 //context
@@ -32,6 +35,55 @@ const ContactComponent = () => {
       }));
     } catch (e) {
       console.log("Error occured:", e);
+    }
+  };
+
+  const validateEmail = (email) => {
+    try {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // basic email regex
+      return regex.test(email);
+    } catch (e) {
+      console.log("Error occured", e);
+    }
+  };
+
+  const handleContactSubmitButton = async (e) => {
+    try {
+      e.preventDefault();
+      if (contactData.interest == "") {
+        toast.error("Invalid interest selected.", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: "true",
+        });
+        return;
+      }
+      const emailVerified = validateEmail(contactData.email);
+      if (!emailVerified) {
+        toast.error("Invalid email address.", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: "true",
+        });
+      } else {
+        const resp = await axios.post(
+          "http://127.0.0.1:8000/contact/contactData",
+          contactData
+        );
+        console.log(resp);
+        toast.success("Succesfully saved your contact.", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: "true",
+        });
+      }
+    } catch (error) {
+      toast.error("Failed to submit contact!", {
+        hideProgressBar: true,
+        autoClose: 3000,
+        position: "top-right",
+      });
+      console.log("error occured in submitting:", e);
     }
   };
 
@@ -81,7 +133,7 @@ const ContactComponent = () => {
                 Email
               </label>
               <input
-                type="text"
+                type="email"
                 id="emailAddress"
                 name="emailAddress"
                 placeholder="Enter your email"
@@ -137,10 +189,14 @@ const ContactComponent = () => {
               variant="contained"
               className="contactComponent-submit"
               fullWidth
+              onClick={(e) => {
+                handleContactSubmitButton(e);
+              }}
             >
               Send Message
             </Button>
           </form>
+          <ToastContainer />
         </div>
       </div>
     </div>
