@@ -15,8 +15,10 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
   gap: 5px;
 }
 
@@ -40,21 +42,23 @@
 /* Grid */
 .insuranceComponent-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(
+    1,
+    1fr
+  ); /* default: 1 column for small screens */
+  gap: 1.5rem; /* space between cards */
+  margin-top: 2rem;
 }
-
 @media (min-width: 768px) {
-  .insuranceComponent-wrapper {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+  .insuranceComponent-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
   }
 }
 
+/* Large screens (desktop) */
 @media (min-width: 1024px) {
-  .insuranceComponent-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .insuranceComponent-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
   }
 }
 
@@ -110,5 +114,5 @@
 }
 
 .insuranceComponent-ctaButton:hover {
-  background-color: #ea580c; /* orange-600 */
+  background-color: #ea580c !important; /* orange-600 */
 }
