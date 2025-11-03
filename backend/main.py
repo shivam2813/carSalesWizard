@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import contact
+from routers import contact,reviews
 from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI()
@@ -13,7 +13,7 @@ app.add_middleware(
 )
 
 app.include_router(contact.router,prefix='/contact',tags=["Contact"])
-
+app.include_router(reviews.router,prefix='/reviews',tags=["Reviews"])
 
 @app.get("/")
 def home():
